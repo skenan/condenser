@@ -10,6 +10,8 @@ import allTypes from 'app/components/elements/notification/type';
  * @return {Map}
  */
 function apiToMap(payload) {
+    if (!payload || payload.length === 0) return Map();
+
     return Map(Object.assign(...payload.map(d => ({ [d.id]: d }))));
 }
 
@@ -26,7 +28,7 @@ export const byId = (state = OrderedMap(), action = { type: null }) => {
         case 'notification/APPEND_SOME':
             return state.merge(apiToMap(action.payload)).sortBy(n => n.created).reverse();
         case 'notification/MARK_ALL_READ':
-            //filters needed here that use the id list? // Todo: for dev only! Do not merge if present! 
+            //filters needed here that use the id list? // Todo: for dev only! Do not merge if present!
             return state.map(n => {
                 return {
                     ...n,
