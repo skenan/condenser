@@ -1,7 +1,7 @@
 {
   "g": {
     "age": "时间",
-    "amount": "量",
+    "amount": "数量",
     "and": "和",
     "are_you_sure": "你确定？",
     "ask": "卖价",
@@ -86,7 +86,7 @@
     "save": "保存",
     "saved": "保存",
     "search": "搜索",
-    "sell": "卖",
+    "sell": "卖出",
     "settings": "设置",
     "share_this_post": "分享这篇文章",
     "show": "显示",
@@ -595,7 +595,7 @@
     "this_memo_is_public": "这个备忘录是公开的",
     "convert_to_VESTING_TOKEN": "转换为 %(VESTING_TOKEN)s",
     "balance_subject_to_3_day_withdraw_waiting_period": "平衡待3天退出等待期，",
-    "move_funds_to_another_account": "将资金移动到另一个 %(VESTING_TOKEN)s 的帐户。",
+    "move_funds_to_another_account": "将资金移动到另一个 %(APP_NAME)s 的帐户。",
     "protect_funds_by_requiring_a_3_day_withdraw_waiting_period": "通过要求3天撤回等待期来保护资金。",
     "withdraw_funds_after_the_required_3_day_waiting_period": "在需要3天的等待期后提款。",
     "from": "从",
