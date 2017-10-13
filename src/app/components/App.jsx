@@ -185,7 +185,7 @@ class App extends React.Component {
                         <CloseButton onClick={() => this.setState({showBanner: false})} />
                         <div className="text-center">
                             <h2>{tt('navigation.intro_tagline')}</h2>
-                            <h4>{tt('navigation.intro_paragraph')}</h4>
+                            <h3>{tt('navigation.intro_paragraph')}</h3>
                             <br />
                             <a className="button button--primary" href="/pick_account"> <b>{tt('navigation.sign_up')}</b> </a>
                             &nbsp; &nbsp; &nbsp;

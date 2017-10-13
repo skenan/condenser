@@ -1,17 +1,42 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {IntlProvider, addLocaleData} from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import es from 'react-intl/locale-data/es';
+import zh from 'react-intl/locale-data/zh';
 import {DEFAULT_LANGUAGE} from 'app/client_config';
 import tt from 'counterpart';
 
-addLocaleData([...en, ...es]);
+addLocaleData([...zh]);
+const localeDefaults = {
+    counterpart: {
+        pluralize: (entry, count) => entry[
+            (count === 0 && 'zero' in entry)
+                ? 'zero' : (count === 1) ? 'one' : 'other'
+            ],
+        formats: {
+            date: {
+                'default': '%a, %e. %b %Y',
+                'long': '%A, %e. %B %Y',
+                'short': '%d.%m.%y'
+            },
+            time: {
+                'default': '%H:%M',
+                'long': '%H:%M:%S %z',
+                'short': '%H:%M'
+            },
+            datetime: {
+                'default': '%a, %e. %b %Y, %H:%M',
+                'long': '%A, %e. %B %Y, %H:%M:%S %z',
+                'short': '%d.%m.%y %H:%M'
+            }
+        }
+    }
+}
+const zhJSON = Object.assign(
+    require('app/locales/zh.json'), localeDefaults
+)
 
-tt.registerTranslations('en', require('app/locales/en.json'));
-tt.registerTranslations('es', require('app/locales/es.json'));
-tt.setFallbackLocale('en');
-
+tt.registerTranslations('zh', zhJSON);
+tt.setFallbackLocale('zh');
 class Translator extends React.Component {
     render() {
         let language = this.props.locale;
