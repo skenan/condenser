@@ -367,8 +367,8 @@ function* preBroadcast_comment({operation, username}) {
     if (!permlink) permlink = yield createPermlink(title, author, parent_author, parent_permlink)
 
     const md = operation.json_metadata
-    json_metadata = typeof md === 'string' ? md : JSON.stringify(md)
-    json_metadata = new Buffer(json_metadata, 'utf-8')
+    const json_string = typeof md === 'string' ? md : JSON.stringify(md)
+    const json_metadata = new Buffer(json_string, 'utf-8')
     const op = {
         ...operation,
         permlink: permlink.toLowerCase(),
