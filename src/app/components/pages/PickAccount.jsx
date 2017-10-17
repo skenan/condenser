@@ -107,7 +107,12 @@ class PickAccount extends React.Component {
             return <div className="row">
                 <div className="column">
                     <div className="callout alert">
-                        <p>The creation of new accounts is temporarily disabled.</p>
+                        <p>暂不支持在cnsteem注册，请使用如下两种方式进行注册:</p>
+                    </div>
+
+                    <div className="callout success">
+                        <p>1. 前往<a href="https://steemit.com/pick_account">steemit.com</a>免费注册，需要1-2天时间审核</p>
+                        <p>2. 前往<a href="https://anon.steem.network">anon.steem.network</a>使用加密货币进行付费注册，无需审核时间</p>
                     </div>
                 </div>
             </div>;
