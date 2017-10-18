@@ -216,6 +216,8 @@ class PostFull extends React.Component {
             content_body = 'Not available for legal reasons.'
         }
 
+        content_body = content_body.replace(/https:\/\/steemit.com/g, 'https://cnsteem.com');
+
         const bShowLoading = (!bIllegalContentUser && !bDMCAStop && content.body.length < content.body_length)
 
         // hide images if user is on blacklist
