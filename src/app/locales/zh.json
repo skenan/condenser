@@ -441,7 +441,7 @@
   "converttosteem_jsx": {
     "your_existing_DEBT_TOKEN_are_liquid_and_transferable": "你现有的%(DEBT_TOKEN)s 是流动的和可转让的。相反，你可能希望在 %(link)s 下直接在本网站交易 %(DEBT_TOKEN)s 或转移到外部市场。",
     "this_is_a_price_feed_conversion": "这是一个价格饲料转换。 3.5天的延迟是必要的，以防止滥用游戏平均价格",
-    "convert_to_LIQUID_TOKEN": "转换为 %(DEBT_TOKEN)s ",
+    "convert_to_LIQUID_TOKEN": "转换为 %(LIQUID_TOKEN)s ",
     "DEBT_TOKEN_will_be_unavailable": "此行动将在3.5天之后进行，无法取消。这些 %(DEBT_TOKEN)s 将立即变得不可用"
   },
   "tips_js": {
