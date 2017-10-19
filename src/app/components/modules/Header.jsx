@@ -13,6 +13,7 @@ import { APP_NAME } from 'app/client_config';
 
 function sortOrderToLink(so, topic, account) {
     if (so === 'home') return '/@' + account + '/feed';
+    if (so === 'novice') return '/cn/@jubi/cn-steemit-wang';
     if (topic) return `/${so}/${topic}`;
     return `/${so}`;
 }
@@ -154,20 +155,22 @@ class Header extends React.Component {
         const topic_link = topic ? <Link to={`/${this.last_sort_order || 'trending'}/${topic}`}>{topic}</Link> : null;
 
         const sort_orders = [
-            ['trending', tt('main_menu.trending')],        
+            ['trending', tt('main_menu.trending')],
             ['created', tt('g.new')],
             ['hot', tt('main_menu.hot')],
-            ['promoted', tt('g.promoted')]
+            ['promoted', tt('g.promoted')],
+            ['novice', '新人指南']
         ];
         if (current_account_name) sort_orders.unshift(['home', tt('header_jsx.home')]);
         const sort_order_menu = sort_orders.filter(so => so[0] !== sort_order).map(so => ({link: sortOrderToLink(so[0], topic, current_account_name), value: so[1]}));
         const selected_sort_order = sort_orders.find(so => so[0] === sort_order);
 
         const sort_orders_horizontal = [
-            ['trending', tt('main_menu.trending')],        
+            ['trending', tt('main_menu.trending')],
             ['created', tt('g.new')],
             ['hot', tt('main_menu.hot')],
-            ['promoted', tt('g.promoted')]
+            ['promoted', tt('g.promoted')],
+            ['novice', '新人指南']
         ];
         // if (current_account_name) sort_orders_horizontal.unshift(['home', tt('header_jsx.home')]);
         const sort_order_menu_horizontal = sort_orders_horizontal.map((so) => {
@@ -189,7 +192,7 @@ class Header extends React.Component {
                                 </li>
                                 <li className="Header__top-steemit show-for-medium noPrint"><Link to={logo_link}>steemit<span className="beta">beta</span></Link></li>
                                 <li className="delim show-for-medium">|</li>
-                    
+
                                 {(topic_link || user_name || page_name) && sort_order && <li className="delim show-for-small-only">|</li>}
                                 {selected_sort_order && <DropdownMenu className="Header__sort-order-menu menu-hide-for-large" items={sort_order_menu} selected={selected_sort_order[1]} el="li" />}
                                 <HorizontalMenu items={sort_order_menu_horizontal} />
