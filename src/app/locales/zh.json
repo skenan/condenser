@@ -227,9 +227,11 @@
     "learn_more": "了解更多",
     "welcome": "欢迎",
     "faq": "常问问题",
+    "shop": "Steemit 商店",
     "chat": "聊天",
     "app_center": "Steemit 应用中心",
-    "api_docs": "Steemit API文件",
+    "api_docs": "Steemit API文档",
+    "bluepaper": "Steem 蓝皮书",
     "whitepaper": "Steem 白皮书",
     "intro_tagline": "妙笔生金",
     "intro_paragraph": "你的思想是有价值的，快来加入一个给文章付钱的社区。"
@@ -334,7 +336,12 @@
     "user_hasnt_started_bloggin_yet": "看起来 %(name)s 还没有开始写博客！",
     "user_hasnt_followed_anything_yet": "看起来 %(name)s 可能还没有关注任何人！如果 %(name)s 最近添加了新用户，则一旦新内容可用，他们的个性化动态将会填充。",
     "user_hasnt_had_any_replies_yet": "%(name)s 还没有任何回复",
-    "followers": "关注",
+    "looks_like_you_havent_posted_anything_yet": "看起来你还没有发表任何帖子！",
+    "create_a_post": "创建一个帖子",
+    "explore_trending_articles": "浏览流行文章",
+    "read_the_quick_start_guide": "阅读新手指南",
+    "browse_the_faq": "浏览 FAQ",
+    "followers": "关注者",
     "this_is_users_reputations_score_it_is_based_on_history_of_votes": "这是 %(name)s 的声望分数。信誉评分取决于帐户收到的投票历史记录，用于隐藏低质量的内容。",
     "follower_count": {
       "zero": "没有关注者",
@@ -600,7 +607,8 @@
     "withdraw_funds_after_the_required_3_day_waiting_period": "在需要3天的等待期后提款。",
     "from": "从",
     "to": "至",
-    "asset_currently_collecting": "%(asset)s 当前收集 %(interest)s%% APR。"
+    "asset_currently_collecting": "%(asset)s 当前收集 %(interest)s%% APR。",
+    "beware_of_spam_and_phishing_links": "小心memo里的诈骗和钓鱼链接！不要打开你不信任的人的链接。不要把私钥提供给任何第三方网站。"
   },
   "userwallet_jsx": {
     "conversion_complete_tip": "将完成",
