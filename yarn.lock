@@ -3745,7 +3745,7 @@ hide-powered-by@1.0.0:
   resolved "https://registry.yarnpkg.com/hide-powered-by/-/hide-powered-by-1.0.0.tgz#4a85ad65881f62857fc70af7174a1184dccce32b"
 
 highcharts@^4.2.3, highcharts@^4.2.5:
-  version v4.2.7
+  version "4.2.7"
   resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-4.2.7.tgz#45cbed8e99c9c042e95f9c51076726496f686862"
 
 history@^3.0.0:
@@ -5903,6 +5903,10 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
+picturefill@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
+
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -7475,9 +7479,9 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-"steem@github:steemit/steem-js#ec4439c":
-  version "0.6.4"
-  resolved "https://codeload.github.com/steemit/steem-js/tar.gz/ec4439c"
+"steem@github:steemit/steem-js#72a36c835a74f446da47e36feea5d5f1f4dde55b":
+  version "0.6.5"
+  resolved "https://codeload.github.com/steemit/steem-js/tar.gz/72a36c835a74f446da47e36feea5d5f1f4dde55b"
   dependencies:
     bigi "^1.4.2"
     bluebird "^3.4.6"
