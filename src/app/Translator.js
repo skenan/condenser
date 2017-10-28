@@ -6,37 +6,10 @@ import {DEFAULT_LANGUAGE} from 'app/client_config';
 import tt from 'counterpart';
 
 addLocaleData([...zh]);
-const localeDefaults = {
-    counterpart: {
-        pluralize: (entry, count) => entry[
-            (count === 0 && 'zero' in entry)
-                ? 'zero' : (count === 1) ? 'one' : 'other'
-            ],
-        formats: {
-            date: {
-                'default': '%a, %e. %b %Y',
-                'long': '%A, %e. %B %Y',
-                'short': '%d.%m.%y'
-            },
-            time: {
-                'default': '%H:%M',
-                'long': '%H:%M:%S %z',
-                'short': '%H:%M'
-            },
-            datetime: {
-                'default': '%a, %e. %b %Y, %H:%M',
-                'long': '%A, %e. %B %Y, %H:%M:%S %z',
-                'short': '%d.%m.%y %H:%M'
-            }
-        }
-    }
-}
-const zhJSON = Object.assign(
-    require('app/locales/zh.json'), localeDefaults
-)
 
-tt.registerTranslations('zh', zhJSON);
+tt.registerTranslations('zh', require('app/locales/zh.json'));
 tt.setFallbackLocale('zh');
+
 class Translator extends React.Component {
     render() {
         let language = this.props.locale;
@@ -55,7 +28,7 @@ class Translator extends React.Component {
 
 export default connect(
     (state, ownProps) => {
-        const locale = state.user.get('locale');
+        const locale = 'zh'; // temporary, real i18n support will be added later
         return {...ownProps, locale};
     }
 )(Translator);

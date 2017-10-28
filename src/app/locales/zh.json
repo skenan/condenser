@@ -65,8 +65,8 @@
     "print": "打印",
     "promote": "推广",
     "promoted": "推广",
-    "re": "回覆",
-    "re_to": "RE: %(topic)s",
+    "re": "回复",
+    "re_to": "回复: %(topic)s",
     "recent_password": "最近的密码",
     "receive": "接收",
     "remove": "去掉",
@@ -74,11 +74,7 @@
     "replied_to": "回复了 %(account)s",
     "replies": "回复",
     "reply": "回复",
-    "reply_count": {
-      "zero": "没有回复",
-      "one": "1回复",
-      "other": "%(count)s 的回复"
-    },
+    "reply_count": "%(count)s 个回复",
     "reputation": "声誉",
     "reveal_comment": "显示评论",
     "request": "请求",
@@ -196,16 +192,8 @@
     "show_more_topics": "显示更多主题",
     "basic": "基本",
     "advanced": "高级",
-    "views": {
-      "zero": "没有意见",
-      "one": "%(count)s 查看",
-      "other": "%(count)s 查看"
-    },
-    "responses": {
-      "zero": "没有回应",
-      "one": "%(count)s 的响应",
-      "other": "%(count)s 的回应"
-    },
+    "views": "%(count)s 查看",
+    "responses": "%(count)s 个回复",
     "post_key_warning": {
       "confirm": "你即将发布STEEM私钥或主密码。你可能会失去对相关帐户及其所有资金的控制权。",
       "warning": "合法用户，包括Steemit Inc.的员工，绝对不会要求你提供私钥或主密码。",
@@ -345,21 +333,9 @@
     "browse_the_faq": "浏览 FAQ",
     "followers": "关注者",
     "this_is_users_reputations_score_it_is_based_on_history_of_votes": "这是 %(name)s 的声望分数。信誉评分取决于帐户收到的投票历史记录，用于隐藏低质量的内容。",
-    "follower_count": {
-      "zero": "没有关注者",
-      "one": "1 个关注者",
-      "other": "%(count)s 个关注者"
-    },
-    "followed_count": {
-      "zero": "没有关注任何人",
-      "one": "只关注1个人",
-      "other": "关注 %(count)s 人"
-    },
-    "post_count": {
-      "zero": "没有帖子",
-      "one": "1个帖子",
-      "other": "%(count)s 个帖子"
-    }
+    "follower_count": "%(count)s 个关注者",
+    "followed_count": "关注 %(count)s 人",
+    "post_count": "%(count)s 个帖子"
   },
   "authorrewards_jsx": {
     "estimated_author_rewards_last_week": "预计上周作者奖励",
@@ -393,19 +369,12 @@
     "changing_to_a_downvote": "转向举报",
     "confirm_flag": "确认举报",
     "and_more": "和 %(count)s 多",
-    "votes_plural": {
-      "one": "%(count)s 票",
-      "other": "%(count)s 票"
-    }
+    "votes_plural": "%(count)s 票"
   },
   "witnesses_jsx": {
     "witness_thread": "见证人页面",
     "top_witnesses": "见证人投票",
-    "you_have_votes_remaining": {
-      "zero": "你没有剩余投票",
-      "one": "你还剩1票",
-      "other": "你还剩下 %(count)s 票"
-    },
+    "you_have_votes_remaining": "你还剩下 %(count)s 票",
     "you_can_vote_for_maximum_of_witnesses": "你最多可以投票30名见证人",
     "witness": "见证人",
     "information": "信息",
@@ -419,16 +388,8 @@
   },
   "votesandcomments_jsx": {
     "no_responses_yet_click_to_respond": "没有回应点击回复。",
-    "response_count_tooltip": {
-      "zero": "没有回应。点击回复。",
-      "one": "1回应。点击回复。",
-      "other": "%(count)s 的响应。点击回复。"
-    },
-    "vote_count": {
-      "zero": "没有投票",
-      "one": "1票",
-      "other": "%(count)s 票"
-    }
+    "response_count_tooltip": "%(count)s 的响应。点击回复。",
+    "vote_count": "%(count)s 票"
   },
   "userkeys_jsx": {
     "public": "公开的",
