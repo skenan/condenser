@@ -233,9 +233,6 @@ class PostFull extends React.Component {
         };
 
         const share_menu = [
-            {link: '#', onClick: this.fbShare, value: 'Facebook', title: tt('postfull_jsx.share_on_facebook'), icon: 'facebook'},
-            {link: '#', onClick: this.twitterShare, value: 'Twitter', title: tt('postfull_jsx.share_on_twitter'), icon: 'twitter'},
-            {link: '#', onClick: this.linkedInShare, value: 'LinkedIn', title: tt('postfull_jsx.share_on_linkedin'), icon: 'linkedin'},
         ];
 
         const Editor = this.state.showReply ? PostFullReplyEditor : PostFullEditEditor;
@@ -355,7 +352,7 @@ class PostFull extends React.Component {
                 </span>
                 <ShareMenu menu={share_menu} />
                 <button className="explore-post" title={tt('g.share_this_post')} onClick={this.showExplorePost}>
-                  <Icon name="link" className="chain-right" />
+                  分享
                 </button>
               </div>
             </div>

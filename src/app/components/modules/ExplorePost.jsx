@@ -20,7 +20,7 @@ class ExplorePost extends Component {
         this.Steemd = this.Steemd.bind(this);
         this.Steemdb = this.Steemdb.bind(this);
         this.Busy = this.Busy.bind(this);
-        this.Phist = this.Phist.bind(this);
+        this.Steemit = this.Steemit.bind(this);
     }
 
     Steemd() {
@@ -35,8 +35,8 @@ class ExplorePost extends Component {
         serverApiRecordEvent('Busy view', this.props.permlink);
     }
 
-    Phist() {
-        serverApiRecordEvent('PhistView', this.props.permlink);
+    Steemit() {
+        serverApiRecordEvent('SteemitView', this.props.permlink);
     }
 
     onCopy() {
@@ -50,25 +50,25 @@ class ExplorePost extends Component {
         const steemd = 'https://steemd.com' + link;
         const steemdb = 'https://steemdb.com' + link;
         const busy = 'https://busy.org' + link;
+        const cnsteem = 'https://cnsteem.com' + link;
         const steemit = 'https://steemit.com' + link;
-        const phist = 'https://phist.steemdata.com/history?identifier=steemit.com' + link;
         let text = this.state.copied == true ? tt('explorepost_jsx.copied') : tt('explorepost_jsx.copy');
         return (
             <span className="ExplorePost">
                 <h4>{tt('g.share_this_post')}</h4>
                 <hr />
                 <div className="input-group">
-                    <input className="input-group-field share-box" type="text" value={steemit} onChange={(e) => e.preventDefault()} />
-                    <CopyToClipboard text={steemit} onCopy={this.onCopy} className="ExplorePost__copy-button input-group-label">
+                    <input className="input-group-field share-box" type="text" value={cnsteem} onChange={(e) => e.preventDefault()} />
+                    <CopyToClipboard text={cnsteem} onCopy={this.onCopy} className="ExplorePost__copy-button input-group-label">
                       <span>{text}</span>
                     </CopyToClipboard>
                 </div>
                 <h5>{tt('explorepost_jsx.alternative_sources')}</h5>
                 <ul>
+                    <li><a href={steemit} onClick={this.Steemit} target="_blank" rel="noopener noreferrer">steemit.com <Icon name="extlink" /></a></li>
                     <li><a href={steemd} onClick={this.Steemd} target="_blank" rel="noopener noreferrer">steemd.com <Icon name="extlink" /></a></li>
                     <li><a href={steemdb} onClick={this.Steemdb} target="_blank" rel="noopener noreferrer">steemdb.com <Icon name="extlink" /></a></li>
                     <li><a href={busy} onClick={this.Busy} target="_blank" rel="noopener noreferrer">busy.org <Icon name="extlink" /></a></li>
-                    <li><a href={phist} onClick={this.Phist} target="_blank" rel="noopener noreferrer">phist.steemdata.com <Icon name="extlink" /></a></li>
                 </ul>
             </span>
         )
