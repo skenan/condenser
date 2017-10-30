@@ -4,23 +4,37 @@ import config from 'config';
 const sg = sendgrid(config.get('sendgrid.key'));
 
 export default function sendEmail(template, to, params, from = null) {
+
+    /*
     if (process.env.NODE_ENV !== 'production') {
         console.log(`mail: to <${to}>, from <${from}>, template ${template} (not sent due to not production env)`);
         return;
     }
     const tmpl_id = config.get('sendgrid.templates')[template];
-    if (!tmpl_id) throw new Error(`can't find template ${template}`);
-
+    if (!tmpl_id) throw new Error(`can't find template ${template}`);*/
+    {}
     const request = sg.emptyRequest({
         method: 'POST',
         path: '/v3/mail/send',
         body: {
-            template_id: tmpl_id,
+            //template_id: tmpl_id,
             personalizations: [
-                {to: [{email: to}],
-                 substitutions: params},
+                {
+                    to: [
+                        {
+                            email: to
+                        }
+                    ],
+                    subject: 'CNsteem邮箱验证'
+                },
             ],
-            from: {email: from || config.get('sendgrid.from')}
+            from: {email: from || config.get('sendgrid.from')},
+            content: [
+                {
+                    type: 'text/plain',
+                    value: "点击此链接，完成邮箱验证：https://cnsteem.com/confirm_email/"+params
+                }
+            ]
         }
     });
 

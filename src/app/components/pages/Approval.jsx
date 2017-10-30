@@ -19,16 +19,14 @@ class Approval extends React.Component {
         let body = '';
         if (this.state.confirm_email) {
             body = <div>
-                <h4>Thanks for confirming your email!</h4>
-                <p>After validating your sign up request with us we'll look it over for approval. As soon as your turn is up and you're approved, you'll be sent a link to finalize your account!</p>
-                <p>You'll be among the earliest members of the Steemit community!</p>
+                <h4>感谢你确认电子邮件！</h4>
+                <p>我们将审核你的申请. 一旦通过，我们将发送Email提醒你完成最后一步注册。</p>
             </div>
         } else {
             body = <div>
-                <h4>Thanks for confirming your phone number!</h4>
-                <p>You're a few steps away from getting to the top of the list. Check your email and click the email validation link.</p>
-                <p>After validating your sign up request with us we'll look it over for approval. As soon as your turn is up and you're approved, you'll be sent a link to finalize your account!</p>
-                <p>You'll be among the earliest members of the Steemit community!</p>
+                <h4>请前往邮箱，检查你的电子邮件!</h4>
+                <p>查看你的邮件，点击确认完成邮箱验证。</p>
+                <p>邮箱验证成功后，我们将审核你的申请. 一旦通过，我们将发送Email提醒你完成注册。</p>
             </div>
         }
         return (

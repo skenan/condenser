@@ -44,12 +44,12 @@ function* confirmEmailHandler() {
     if (!eid) {
         console.log("confirmation code not found", this.session.uid, this.session.user, confirmation_code);
         this.status = 401;
-        this.body = "confirmation code not found";
+        this.body = "没有找到此验证码";
         return;
     }
     if (eid.email_verified) {
         this.session.user = eid.user_id; // session recovery (user changed browsers)
-        this.flash = { success: "Email has already been verified" };
+        this.flash = { success: "Email已经被验证" };
         this.redirect("/approval?confirm_email=true");
         return;
     }
@@ -57,7 +57,7 @@ function* confirmEmailHandler() {
     if (hours_ago > 24.0 * 10) {
         eid.destroy();
         this.status = 401;
-        this.body = '<!DOCTYPE html>Confirmation code expired.  Please <a href="/enter_email">re-submit</a> your email for verification.';
+        this.body = '<!DOCTYPE html>验证码过期.  请重新 <a href="/enter_email">提交</a> 你的电子邮件以完成验证.';
         return;
     }
 
@@ -71,7 +71,7 @@ function* confirmEmailHandler() {
             this.session.uid,
             eid.email
         );
-        this.flash = {error: 'This email has already been used'};
+        this.flash = {error: 'Email已被使用'};
         this.redirect('/pick_account');
         return;
     }
@@ -89,6 +89,8 @@ function* confirmEmailHandler() {
     if (mixpanel)
         mixpanel.track("SignupStepConfirmEmail", { distinct_id: this.session.uid });
 
+    this.redirect("/approval?confirm_email=true");
+    /*
     const eid_phone = yield models.Identity.findOne({
         where: { user_id: eid.user_id, provider: "phone", verified: true}
     });
@@ -99,7 +101,7 @@ function* confirmEmailHandler() {
     } else {
         this.flash = { success: "Thanks for confirming your email. Your phone needs to be confirmed before proceeding." };
         this.redirect("/enter_mobile");
-    }
+    }*/
 
     // check if the phone is confirmed then redirect to create account - this is useful when we invite users and send them the link
     // const mid = yield models.Identity.findOne({
@@ -154,7 +156,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                 }
                 if (there_is_created_account) {
                     // user clicked expired link - already created account
-                    this.flash = {alert: "Your account has already been created."};
+                    this.flash = {alert: "你的账户已经被创建."};
                     this.redirect("/login.html");
                 } else {
                     user.update({account_status: 'approved'});
@@ -162,15 +164,15 @@ export default function useEnterAndConfirmEmailPages(app) {
                     this.redirect("/create_account");
                 }
             } else if (user.account_status === "waiting") {
-                this.flash = { error: "Your account has not been approved yet." };
+                this.flash = { error: "你的账号还没有被通过" };
                 this.redirect("/");
             } else {
-                this.flash = { error: "Issue with your sign up status." };
+                this.flash = { error: "注册信息错误" };
                 this.redirect("/");
             }
         } else {
             // no matching identity found redirect
-            this.flash = { error: "This is not a valid sign up code. Please click the link in your welcome email." };
+            this.flash = { error: "这不是一个有效的注册码. 请到你的Email中打开连接." };
             this.redirect("/");
         }
     });
@@ -179,7 +181,7 @@ export default function useEnterAndConfirmEmailPages(app) {
         console.log("-- /enter_email -->", this.session.uid, this.session.user, this.request.query.account);
         const picked_account_name = this.session.picked_account_name = this.request.query.account;
         if (!picked_account_name) {
-            this.flash = { error: "Please select your account name" };
+            this.flash = { error: "请选择你的账号名" };
             this.redirect('/pick_account');
             return;
         }
@@ -202,13 +204,13 @@ export default function useEnterAndConfirmEmailPages(app) {
                         <Progress tabIndex="0" value={50} max={100} />
                         <form id="submit_email" action="/submit_email" method="POST">
                             <h4 style={{ color: "#4078c0" }}>
-                                Please provide your email address to continue
+                                请提供你的Email地址
                             </h4>
                             <p className="secondary">
-                                We need your email address to ensure that we can contact you to verify account ownership in the event that your account is ever compromised.
+                                我们需要你的Email来验证你的账户所有权，当你账户被盗时，依次为凭证，帮你找回密码。
                             </p>
-                            <p className="secondary">Please make sure that you enter a <strong>valid</strong> email so that you receive the confirmation link.</p>
-                            <input
+                            <p className="secondary">请确认你输入了一个<strong>有效</strong> 的Email来接收验证链接</p>
+                           <input
                                 type="hidden"
                                 name="csrf"
                                 value={this.csrf}
@@ -234,7 +236,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                                 className="button g-recaptcha"
                                 data-sitekey={rc_site_key}
                                 data-callback="submit_email_form">
-                                CONTINUE
+                                继续
                             </button> :
                                 <input
                                     type="submit"
@@ -266,6 +268,7 @@ export default function useEnterAndConfirmEmailPages(app) {
         email = email.trim().toLowerCase();
         account = account.trim().toLowerCase();
 
+        /*
         //recaptcha
         if (config.get('recaptcha.site_key')) {
             if (!(yield checkRecaptcha(this))) {
@@ -281,7 +284,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                 this.redirect(`/enter_email?email=${email}&account=${account}`);
                 return;
             }
-        }
+        }*/
 
         const parsed_email = email.match(/^.+\@.*?([\w\d-]+\.\w+)$/);
 
@@ -291,7 +294,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                 this.session.uid,
                 email
             );
-            this.flash = { error: "Not valid email address" };
+            this.flash = { error: "无效的Email地址" };
             this.redirect(`/enter_email?email=${email}&account=${account}`);
             return;
         }
@@ -333,7 +336,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                 confirmation_code
             );
 
-            sendEmail("confirm_email", email, { confirmation_code });
+            sendEmail("confirm_email", email, confirmation_code);
 
             if (account) {
                 const existing_account = yield models.Account.findOne({
@@ -350,13 +353,13 @@ export default function useEnterAndConfirmEmailPages(app) {
                 }
             }
         } catch (error) {
-            this.flash = {error: 'Internal Server Error'};
+            this.flash = {error: '内部错误'};
             this.redirect(`/enter_email?email=${email}&account=${account}`);
             console.error('Error in /submit_email :', this.session.uid, error.toString());
         }
 
         // redirect to phone verification
-        this.redirect("/enter_mobile");
+        this.redirect("/approval");
     });
 
     router.get("/confirm_email/:code", confirmEmailHandler);

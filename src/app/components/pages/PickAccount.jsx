@@ -69,7 +69,7 @@ class PickAccount extends React.Component {
             if (!name_error) {
                 this.setState({name_error: ''});
                 promise = api.getAccountsAsync([name]).then(res => {
-                    return res && res.length > 0 ? 'Account name is not available' : '';
+                    return res && res.length > 0 ? '账户名已被占用' : '';
                 });
             }
         }
@@ -77,7 +77,7 @@ class PickAccount extends React.Component {
             promise
                 .then(name_error => this.setState({name_error}))
                 .catch(() => this.setState({
-                    name_error: "Account name can't be verified right now due to server failure. Please try again later."
+                    name_error: "由于系统错误，账号名无法被验证，请稍后再试。"
                 }));
         } else {
             this.setState({name_error});
@@ -121,10 +121,9 @@ class PickAccount extends React.Component {
             return <div className="row">
                 <div className="column">
                     <div className="callout alert">
-                        <h4>Browser Out of Date</h4>
-                        <p>We will be unable to create your Steem account with this browser.</p>
-                        <p>The latest versions of <a href="https://www.google.com/chrome/">Chrome</a> and <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>
-                            are well-tested and known to work well with steemit.com.</p>
+                        <h4>浏览器过时</h4>
+                        <p>我们无法通过此浏览器创建你的账户。</p>
+                        <p>请使用最新版本的<a href="https://www.google.com/chrome/">Chrome</a> 或<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></p>
                     </div>
                 </div>
             </div>;
@@ -134,8 +133,8 @@ class PickAccount extends React.Component {
             return <div className="row">
                 <div className="column">
                     <div className="callout alert">
-                        <p>You need to <a href="#" onClick={logout}>Logout</a> before you can create an additional account.</p>
-                        <p>Please note that Steemit can only register one account per verified user.</p>
+                        <p>在你创建账户之前，请<a href="#" onClick={logout}>登出</a> 你当前账号.</p>
+                        <p>请注意CNsteem只能为一个验证过的用户注册一个账号。</p>
                     </div>
                 </div>
             </div>;
@@ -146,8 +145,8 @@ class PickAccount extends React.Component {
                 <div className="column">
                     <br />
                     <div className="callout alert">
-                        <p>Your sign up request is being processed and you will receive an email from us when it is ready.</p>
-                        <p>Signup requests can take up to 7 days to be processed, but usually complete in a day or two.</p>
+                        <p>你的注册申请正在处理，当审核通过后，你将收到一封电子邮件。</p>
+                        <p>注册审核至多需要7天，通常只要1-2天。</p>
                     </div>
                 </div>
             </div>;
@@ -158,8 +157,8 @@ class PickAccount extends React.Component {
                 <div className="column">
                     <br />
                     <div className="callout success">
-                        <p>Congratulations! Your sign up request has been approved.</p>
-                        <p><Link to="/create_account">Let's get your account created!</Link></p>
+                        <p>恭喜你，你的账户申请通过啦</p>
+                        <p><Link to="/create_account">让我们来创建你的账户。</Link></p>
                     </div>
                 </div>
             </div>;
@@ -183,15 +182,15 @@ class PickAccount extends React.Component {
         if (server_error) {
             if (server_error === 'Email address is not confirmed') {
                 next_step = <div className="callout alert">
-                    <a href="/enter_email">Please verify your email address</a>
+                    <a href="/enter_email">请验证你的Email地址</a>
                 </div>;
             } else if (server_error === 'Phone number is not confirmed') {
                 next_step = <div className="callout alert">
-                    <a href="/enter_mobile">Please verify your phone number</a>
+                    <a href="/enter_mobile">请验证你的手机号</a>
                 </div>;
             } else {
                 next_step = <div className="callout alert">
-                    <h5>Couldn't create account. The server returned the following error:</h5>
+                    <h5>无法创建账户，系统返回以下错误:</h5>
                     <p>{server_error}</p>
                 </div>;
             }
@@ -204,21 +203,21 @@ class PickAccount extends React.Component {
                         <br />
                         <Progress tabIndex="0" value={10} max={100} />
                         <br />
-                        <h4 style={{ color: "#4078c0" }}>Welcome to Steemit</h4>
+                        <h4 style={{ color: "#4078c0" }}>欢迎来到CNsteem</h4>
                         <div className="secondary">
-                             <p>Your account name is how you will be known on steemit.com.<br />
+                             <p>请输入你要在steem使用的账户名，你在CNsteem创建的账户，可以在所有基于steem的网站使用:<br />
                                  {/*Your account name <strong>can never be changed</strong>, so please choose carefully.*/}</p>
                         </div>
                         <form onSubmit={this.onSubmit} autoComplete="off" noValidate method="post">
                             <div className={name_error ? 'error' : ''}>
-                                <label>ACCOUNT NAME</label>
+                                <label>账户名：</label>
                                 <input type="text" name="name" autoComplete="off" onChange={this.onNameChange} value={name} placeholder={"Name..."} />
                                 <p>{name_error}</p>
                             </div>
                             <input disabled={submit_btn_disabled} type="submit" className={submit_btn_class} value="CONTINUE" />
                         </form>
                         <br />
-                        <p className="secondary">Already have an account? <Link to="/login.html">Login</Link></p>
+                        <p className="secondary">已经拥有账户? <Link to="/login.html">登录</Link></p>
                     </div>
                 </div>
             </div>
