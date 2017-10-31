@@ -107,7 +107,7 @@ class PickAccount extends React.Component {
             return <div className="row">
                 <div className="column">
                     <div className="callout alert">
-                        <p>暂不支持在cnsteem注册，请使用如下两种方式进行注册:</p>
+                        <p>今日注册额度已满，请使用如下两种方式进行注册:</p>
                     </div>
 
                     <div className="callout success">
