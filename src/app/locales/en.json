@@ -91,8 +91,8 @@
     "settings": "Settings",
     "share_this_post": "Share this post",
     "show": "Show",
-    "sign_in": "Sign In",
-    "sign_up": "Sign Up",
+    "sign_in": "Sign in",
+    "sign_up": "Sign up",
     "since": "since",
     "submit": "Submit",
     "power_up": "Power Up",
@@ -100,6 +100,7 @@
     "tag": "Tag",
     "to": " to ",
     "topics": "Topics",
+    "toggle_nightmode": "Toggle Night Mode",
     "all_tags": "All tags",
     "transfer": "Transfer ",
     "trending_topics": "Trending Topics",
@@ -235,7 +236,7 @@
     "api_docs": "Steemit API Docs",
     "bluepaper": "Steem Bluepaper",
     "whitepaper": "Steem Whitepaper",
-    "intro_tagline": "Money talks.",
+    "intro_tagline": "Money talks",
     "intro_paragraph": "Your voice is worth something. Join the community that pays you to post and curate high quality content."
   },
   "main_menu": {
@@ -479,8 +480,6 @@
   "postsummary_jsx": {
     "resteemed": "Resteemed",
     "resteemed_by": "Resteemed by",
-    "this_post_is": "This post is",
-    "you_can": "You can",
     "reveal_it": "Reveal this post",
     "adjust_your": "adjust your",
     "display_preferences": "display preferences",
@@ -557,6 +556,7 @@
     "to_comment_and_reward_others": " to comment and reward others.",
     "signup_button": "Sign up now to earn ",
     "signup_button_emphasis": "FREE STEEM!",
+    "sign_up_get_steem": "Sign up. Get STEEM",
     "returning_users": "Returning Users: ",
     "join_our": "Join our"
   },

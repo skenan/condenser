@@ -196,21 +196,20 @@ export default function useEnterAndConfirmEmailPages(app) {
         if (this.request.query && this.request.query.email)
             default_email = this.request.query.email;
         const body = renderToString(
-            <div className="App">
+            <div className="App CreateAccount">
                 <MiniHeader />
                 <br />
-                <div className="row" style={{ maxWidth: "32rem" }}>
+                <div className="row CreateAccount__step" style={{ maxWidth: "32rem" }}>
                     <div className="column">
                         <Progress tabIndex="0" value={50} max={100} />
                         <form id="submit_email" action="/submit_email" method="POST">
-                            <h4 style={{ color: "#4078c0" }}>
+                            <h4 className="CreateAccount__title">
                                 请提供你的Email地址
                             </h4>
-                            <p className="secondary">
+                            <p>
                                 我们需要你的Email来验证你的账户所有权，当你账户被盗时，依次为凭证，帮你找回密码。
                             </p>
-                            <p className="secondary">请确认你输入了一个<strong>有效</strong> 的Email来接收验证链接</p>
-                           <input
+                            <input
                                 type="hidden"
                                 name="csrf"
                                 value={this.csrf}
@@ -240,8 +239,8 @@ export default function useEnterAndConfirmEmailPages(app) {
                             </button> :
                                 <input
                                     type="submit"
-                                    className="button"
-                                    value="CONTINUE" />
+                                    className="btn-continue"
+                                    value="Continue" />
                             }
                         </form>
                     </div>

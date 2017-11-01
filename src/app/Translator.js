@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {IntlProvider, addLocaleData} from 'react-intl';
+<<<<<<< HEAD
 import zh from 'react-intl/locale-data/zh';
 import {DEFAULT_LANGUAGE} from 'app/client_config';
 import tt from 'counterpart';
@@ -9,10 +10,40 @@ addLocaleData([...zh]);
 
 tt.registerTranslations('zh', require('app/locales/zh.json'));
 tt.setFallbackLocale('zh');
+=======
+import en from 'react-intl/locale-data/en';
+import es from 'react-intl/locale-data/es';
+import ru from 'react-intl/locale-data/ru';
+import fr from 'react-intl/locale-data/fr';
+import it from 'react-intl/locale-data/it';
+import {DEFAULT_LANGUAGE} from 'app/client_config';
+import tt from 'counterpart';
+
+addLocaleData([...en, ...es, ...ru, ...fr, ...it]);
+
+tt.registerTranslations('en', require('counterpart/locales/en'));
+tt.registerTranslations('en', require('app/locales/en.json'));
+
+tt.registerTranslations('es', require('app/locales/counterpart/es'));
+tt.registerTranslations('es', require('app/locales/es.json'));
+
+tt.registerTranslations('ru', require('counterpart/locales/ru'));
+tt.registerTranslations('ru', require('app/locales/ru.json'));
+
+tt.registerTranslations('fr', require('app/locales/counterpart/fr'));
+tt.registerTranslations('fr', require('app/locales/fr.json'));
+
+tt.registerTranslations('it', require('app/locales/counterpart/it'));
+tt.registerTranslations('it', require('app/locales/it.json'));
+
+if (process.env.NODE_ENV === 'production') {
+tt.setFallbackLocale('en');
+}
+>>>>>>> upstream/master
 
 class Translator extends React.Component {
     render() {
-        let language = this.props.locale;
+        const language = this.props.locale;
         tt.setLocale(language);
         return <IntlProvider
             // to ensure dynamic language change, "key" property with same "locale" info must be added
@@ -28,7 +59,11 @@ class Translator extends React.Component {
 
 export default connect(
     (state, ownProps) => {
+<<<<<<< HEAD
         const locale = 'zh'; // temporary, real i18n support will be added later
+=======
+        const locale = state.app.getIn(['user_preferences', 'locale']);
+>>>>>>> upstream/master
         return {...ownProps, locale};
     }
 )(Translator);
