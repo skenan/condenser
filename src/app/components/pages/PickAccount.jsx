@@ -203,14 +203,14 @@ class PickAccount extends React.Component {
                         <br />
                         <Progress tabIndex="0" value={10} max={100} />
                         <br />
-                        <h4 className="CreateAccount__title">Welcome to Steemit</h4>
+                        <h4 className="CreateAccount__title">注册前请阅读<a href="/cn/@skenan/3p9rbc-cnsteem" target="_blank">这篇文章</a></h4>
                         <div>
-                             <p>请输入你要在steem使用的账户名，你在CNsteem创建的账户，可以在所有基于steem的网站使用:<br />
+                             <p>在steemit官网注册会有20刀注册奖励！请先尝试到<a href="https://steemit.com/pick_account">steemit</a>注册<br />
                                  {/*Your account name <strong>can never be changed</strong>, so please choose carefully.*/}</p>
                         </div>
                         <form onSubmit={this.onSubmit} autoComplete="off" noValidate method="post">
                             <div className={name_error ? 'error' : ''}>
-                                <label>账户名：</label>
+                                <label>选择账户名：</label>
                                 <input type="text" name="name" autoComplete="off" onChange={this.onNameChange} value={name} placeholder={"Name..."} />
                                 <p>{name_error}</p>
                             </div>
