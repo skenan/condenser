@@ -17,10 +17,18 @@ class Approval extends React.Component {
 
     render() {
         let body = '';
-        if (this.state.confirm_email) {
+        if (true) {
             body = <div>
                 <h4>感谢你确认电子邮件！</h4>
-                <p>我们将审核你的申请. 一旦通过，我们将发送Email提醒你完成最后一步注册。</p>
+                <p>我们将审核你的申请. 一旦通过，我们将发送Email提醒你完成最后一步注册, 审核大约需要3-7天。</p>
+                <br/> <br/>
+                <h4>注册加速</h4>
+                <p>CNsteem是<a href="https://steemit.com" target="_blank">steemit</a>的中文版本，由<a href="/cn/@skenan/cnsteem" target="_blank">skenan</a>创建。</p>
+                <p>为了方便中国用户注册，每创建一个用户，<a href="/@skenan" target="_blank">skenan</a>需要花费0.2 Steem 并代理29 Steem Power。</p>
+                <p>为了加快你的注册，可以通过微信扫描下面的二维码进行小额赞助。</p>
+                <p>备注中请填写你的用户名，赞助后24小时内无法开通，请发邮件到cnsteem@gmail.com</p>
+                <p style={{textAlign:'center'}}><img src={require('app/assets/images/pay.png')} /></p>
+
             </div>
         } else {
             body = <div>

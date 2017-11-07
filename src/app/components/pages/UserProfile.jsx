@@ -236,6 +236,7 @@ export default class UserProfile extends React.Component {
                     <Link to="/trending">{tt('user_profile.explore_trending_articles')}</Link><br />
                     <Link to="/welcome">{tt('user_profile.read_the_quick_start_guide')}</Link><br />
                     <Link to="/faq.html">{tt('user_profile.browse_the_faq')}</Link><br />
+                    <Link to="/@skenan">去关注CNsteem的创建者skenan</Link><br/>
                 </div>:
                     tt('user_profile.user_hasnt_started_bloggin_yet', {name: accountname});
 
