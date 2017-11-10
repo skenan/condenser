@@ -17,7 +17,7 @@ class Approval extends React.Component {
 
     render() {
         let body = '';
-        if (true) {
+        if (this.state.confirm_email) {
             body = <div>
                 <h4>感谢你确认电子邮件！</h4>
                 <p>我们将审核你的申请. 一旦通过，我们将发送Email提醒你完成最后一步注册, 审核大约需要3-7天。</p>
