@@ -239,7 +239,7 @@ export default function useEnterAndConfirmEmailPages(app) {
                             </button> :
                                 <input
                                     type="submit"
-                                    className="btn-continue"
+                                    className="button"
                                     value="Continue" />
                             }
                         </form>
