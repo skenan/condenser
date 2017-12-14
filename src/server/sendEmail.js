@@ -7,7 +7,11 @@ export default function sendEmail(template, to, params, from = null) {
 
     /*
     if (process.env.NODE_ENV !== 'production') {
-        console.log(`mail: to <${to}>, from <${from}>, template ${template} (not sent due to not production env)`);
+        console.log(
+            `mail: to <${to}>, from <${from}>, template ${
+                template
+            } (not sent due to not production env)`
+        );
         return;
     }
     const tmpl_id = config.get('sendgrid.templates')[template];
@@ -38,11 +42,18 @@ export default function sendEmail(template, to, params, from = null) {
         }
     });
 
-    sg.API(request)
-    .then(response => {
-        console.log(`sent '${template}' email to '${to}'`, response.statusCode);
-    })
-    .catch(error => {
-        console.error(`failed to send '${template}' email to '${to}'`, error);
-    });
+    sg
+        .API(request)
+        .then(response => {
+            console.log(
+                `sent '${template}' email to '${to}'`,
+                response.statusCode
+            );
+        })
+        .catch(error => {
+            console.error(
+                `failed to send '${template}' email to '${to}'`,
+                error
+            );
+        });
 }

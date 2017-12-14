@@ -1,20 +1,19 @@
-import React, {PropTypes, Component} from 'react';
-import {connect} from 'react-redux';
-import {serverApiRecordEvent} from 'app/utils/ServerApiClient';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { serverApiRecordEvent } from 'app/utils/ServerApiClient';
 import Icon from 'app/components/elements/Icon';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import tt from 'counterpart';
 
 class ExplorePost extends Component {
-
     static propTypes = {
-        permlink: PropTypes.string.isRequired
+        permlink: PropTypes.string.isRequired,
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            copied: false
+            copied: false,
         };
         this.onCopy = this.onCopy.bind(this);
         this.Steemd = this.Steemd.bind(this);
@@ -41,7 +40,7 @@ class ExplorePost extends Component {
 
     onCopy() {
         this.setState({
-            copied: true
+            copied: true,
         });
     }
 
@@ -71,9 +70,8 @@ class ExplorePost extends Component {
                     <li><a href={busy} onClick={this.Busy} target="_blank" rel="noopener noreferrer">busy.org <Icon name="extlink" /></a></li>
                 </ul>
             </span>
-        )
+        );
     }
 }
 
-export default connect(
-)(ExplorePost)
+export default connect()(ExplorePost);

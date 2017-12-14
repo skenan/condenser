@@ -1,23 +1,23 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {VIEW_MODE_WHISTLE, WHISTLE_SIGNUP_COMPLETE} from 'shared/constants';
+import { connect } from 'react-redux';
+import { VIEW_MODE_WHISTLE, WHISTLE_SIGNUP_COMPLETE } from 'shared/constants';
 
 class Approval extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            confirm_email: false
-        }
+            confirm_email: false,
+        };
     }
 
     componentWillMount() {
         if (this.props.location.query.confirm_email) {
-            this.setState({confirm_email: true});
+            this.setState({ confirm_email: true });
         }
     }
 
     render() {
-        if(process.env.BROWSER && this.props.viewMode === VIEW_MODE_WHISTLE) {
+        if (process.env.BROWSER && this.props.viewMode === VIEW_MODE_WHISTLE) {
             window.postMessage(WHISTLE_SIGNUP_COMPLETE);
         }
         let body = '';
@@ -43,10 +43,11 @@ class Approval extends React.Component {
         }
         return (
             <div className="row">
-                <div className="column" style={{maxWidth: '36rem', margin: '0 auto'}}>
-                    <div>
-                        {body}
-                    </div>
+                <div
+                    className="column"
+                    style={{ maxWidth: '36rem', margin: '0 auto' }}
+                >
+                    <div>{body}</div>
                 </div>
             </div>
         );
@@ -58,10 +59,9 @@ module.exports = {
     component: connect(
         state => {
             return {
-                viewMode: state.app.get('viewMode')
-            }
+                viewMode: state.app.get('viewMode'),
+            };
         },
-        dispatch => ({
-        })
-    )(Approval)
+        dispatch => ({})
+    )(Approval),
 };

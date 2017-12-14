@@ -11,6 +11,7 @@ bittre
 bittrec
 bittres
 bittrex.com
+bittreex
 bittrexe
 bittrexx
 bittrez
@@ -24,8 +25,10 @@ bitrrex
 bttrex
 btrex
 bttrex
+bitttex
 ittrex
 bittrex-deposit
+openledgerdex
 blockrades
 blocktraades
 blocktradse
@@ -96,6 +99,7 @@ shapeshift
 randomwhale
 randowale
 randwhale
+bellyrub
 coinpayments
 minnowboost
 minnowboster
@@ -108,6 +112,12 @@ bloocktrades
 bloctrades
 blocktradess
 blocktrade
-`.trim().split('\n');
+blocktraders
+steempay
+steempays
+steemitpay
+`
+    .trim()
+    .split('\n');
 
 export default list;
