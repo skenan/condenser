@@ -132,12 +132,13 @@ class PickAccount extends React.Component {
                 <div className="row">
                     <div className="column">
                         <div className="callout alert">
-                            <p>今日注册额度已满，请使用如下两种方式进行注册:</p>
+                            <p>今日注册额度已满，请使用如下方式进行注册:</p>
                         </div>
 
                         <div className="callout success">
                             <p>1. 前往<a href="https://steemit.com/pick_account">steemit.com</a>免费注册，需要1-2天时间审核</p>
-                            <p>2. 前往<a href="https://anon.steem.network">anon.steem.network</a>使用加密货币进行付费注册，无需审核时间</p>
+                            <p>2. 前往<a href="https://cnsteem.io">cnsteem.io</a>使用支付宝进行注册，无需审核时间</p>
+                            <p>3. 前往<a href="https://anon.steem.network">anon.steem.network</a>使用加密货币进行付费注册，无需审核时间</p>
                         </div>
                     </div>
                 </div>
@@ -234,10 +235,9 @@ class PickAccount extends React.Component {
                         <br />
                         <Progress tabIndex="0" value={10} max={100} />
                         <br />
-                        <h4 className="CreateAccount__title">注册前请阅读<a href="/cn/@skenan/3p9rbc-cnsteem" target="_blank">这篇文章</a></h4>
+                        <h5 className="CreateAccount__title">为防止机器人，注册需要3-7天审核时间</h5>
                         <div>
-                             <p>在steemit官网注册会有20刀注册奖励！请先尝试到<a href="https://steemit.com/pick_account">steemit</a>注册<br />
-                                 {/*Your account name <strong>can never be changed</strong>, so please choose carefully.*/}</p>
+                             <p>可以前往<a href="https://cnsteem.io" target="_blank">CNsteem.io</a>体验瞬间注册<br /></p>
                         </div>
                         <form
                             onSubmit={this.onSubmit}

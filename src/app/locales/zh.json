@@ -226,6 +226,7 @@
     "app_center": "Steemit 应用中心",
     "api_docs": "Steemit API文档",
     "bluepaper": "Steem 蓝皮书",
+    "smt_whitepaper": "SMT 白皮书",
     "whitepaper": "Steem 白皮书",
     "intro_tagline": "妙笔生金",
     "intro_paragraph": "你的思想是有价值的，快来加入一个给文章付钱的社区。"
@@ -576,7 +577,9 @@
     "from": "从",
     "to": "至",
     "asset_currently_collecting": "%(asset)s 当前收集 %(interest)s%% APR。",
-    "beware_of_spam_and_phishing_links": "小心memo里的诈骗和钓鱼链接！不要打开你不信任的人的链接。不要把私钥提供给任何第三方网站。"
+    "beware_of_spam_and_phishing_links": "小心memo里的诈骗和钓鱼链接！不要打开你不信任的人的链接。不要把私钥提供给任何第三方网站。",
+    "autocomplete_previous_transfers": "个转账记录",
+    "autocomplete_user_following": "已关注"
   },
   "userwallet_jsx": {
     "conversion_complete_tip": "将完成",
