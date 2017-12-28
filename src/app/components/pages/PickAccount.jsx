@@ -130,17 +130,18 @@ class PickAccount extends React.Component {
         if (serverBusy || $STM_Config.disable_signups) {
             return (
                 <div className="row">
-                    <div className="column">
-                        <div className="callout alert">
-                            <p>今日注册额度已满，请使用如下方式进行注册:</p>
-                        </div>
+                <div className="row">
 
+                    <div className="column">
                         <div className="callout success">
-                            <p>1. 前往<a href="https://steemit.com/pick_account">steemit.com</a>免费注册，需要1-2天时间审核</p>
+                            <br/><br/>
+                            <p>最近在更新数据库代码，暂不提供注册，可通过以下方式注册:</p>
+                            <p>1. 前往<a href="https://steemit.com/pick_account">steemit.com</a>免费注册，需要4-7天时间审核</p>
                             <p>2. 前往<a href="https://cnsteem.io">cnsteem.io</a>使用支付宝进行注册，无需审核时间</p>
                             <p>3. 前往<a href="https://anon.steem.network">anon.steem.network</a>使用加密货币进行付费注册，无需审核时间</p>
                         </div>
                     </div>
+                </div>
                 </div>
             );
         }
@@ -181,11 +182,8 @@ class PickAccount extends React.Component {
                             <p>你的注册申请正在处理，当审核通过后，你将收到一封电子邮件。</p>
                             <p>你的注册正在审核，通常需要3-7天。</p>
                             <h4>注册加速</h4>
-                            <p>CNsteem是<a href="https://steemit.com" target="_blank">steemit</a>的中文版本，由<a href="/cn/@skenan/cnsteem" target="_blank">skenan</a>创建。</p>
-                            <p>为了方便中国用户注册，每创建一个用户，<a href="/@skenan" target="_blank">skenan</a>需要花费0.2 Steem 并代理29 Steem Power。</p>
-                            <p>为了加快你的注册，可以通过微信扫描下面的二维码进行小额赞助。</p>
-                            <p>备注中请填写你的用户名，赞助后24小时内无法开通，请发邮件到cnsteem@gmail.com</p>
-                            <p style={{textAlign:'center'}}><img src={require('app/assets/images/pay.png')} /></p>
+                            <p>前往<a href="https:/cnsteem.io">CNsteem.io</a>快速注册</p>
+
                         </div>
                     </div>
                 </div>

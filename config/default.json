@@ -1,6 +1,6 @@
 {
   "database_url": "mysql://root:password@127.0.0.1/steemit_dev",
-  "disable_signups": false,
+  "disable_signups": true,
   "facebook_app_id": false,
   "grant": {
     "facebook": {
