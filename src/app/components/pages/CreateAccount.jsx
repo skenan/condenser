@@ -292,7 +292,7 @@ class CreateAccount extends React.Component {
                                 </a>{' '}
                                 for the status of your request.<br />
                                 If you didn't submit your sign up application
-                                yet, <Link to="/pick_account">apply now</Link>!
+                                yet, <a href="https://cnsteem.io">apply now</a>!
                             </p>
                         </div>
                     </div>

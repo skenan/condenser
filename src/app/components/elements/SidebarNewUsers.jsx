@@ -23,7 +23,7 @@ const SidebarNewUsers = () => (
                     </a>
                 </li>
                 <li className="c-sidebar__list-item">
-                    <a className="c-sidebar__link" href="/pick_account">
+                    <a className="c-sidebar__link" href="https://cnsteem.io">
                         Sign up
                     </a>
                 </li>

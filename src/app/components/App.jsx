@@ -263,7 +263,7 @@ class App extends React.Component {
                             <br />
                             <a
                                 className="button button--primary"
-                                href="/pick_account"
+                                href="https://cnsteem.io"
                             >
                                 {' '}
                                 <b>{tt('navigation.sign_up')}</b>{' '}

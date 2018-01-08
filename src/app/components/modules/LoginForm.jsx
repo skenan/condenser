@@ -91,7 +91,7 @@ class LoginForm extends Component {
         const onType = document.getElementsByClassName('OpAction')[0]
             .textContent;
         serverApiRecordEvent('FreeMoneySignUp', onType);
-        window.location.href = '/pick_account';
+        window.location.href = 'https://cnsteem.io';
     }
 
     SignIn() {

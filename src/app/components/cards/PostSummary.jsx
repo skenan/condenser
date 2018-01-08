@@ -269,11 +269,11 @@ class PostSummary extends React.Component {
                                 </span>
                             ) : (
                                 <span>
-                                    <Link to="/pick_account">
+                                    <a href="https://cnsteem.io">
                                         {tt(
                                             'postsummary_jsx.create_an_account'
                                         )}
-                                    </Link>{' '}
+                                    </a>{' '}
                                     {tt(
                                         'postsummary_jsx.to_save_your_preferences'
                                     )}.

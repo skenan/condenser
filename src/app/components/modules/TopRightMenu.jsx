@@ -166,7 +166,7 @@ function TopRightMenu({
     return (
         <ul className={mcn + mcl}>
             <li className={lcn}>
-                <a href="/pick_account">{tt('g.sign_up')}</a>
+                <a href="https://cnsteem.io" target="_blank">{tt('g.sign_up')}</a>
             </li>
             <li className={lcn}>
                 <a href="/login.html" onClick={showLogin}>

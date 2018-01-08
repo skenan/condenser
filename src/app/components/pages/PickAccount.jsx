@@ -135,10 +135,8 @@ class PickAccount extends React.Component {
                     <div className="column">
                         <div className="callout success">
                             <br/><br/>
-                            <p>最近在更新数据库代码，暂不提供注册，可通过以下方式注册:</p>
-                            <p>1. 前往<a href="https://steemit.com/pick_account">steemit.com</a>免费注册，需要4-7天时间审核</p>
-                            <p>2. 前往<a href="https://cnsteem.io">cnsteem.io</a>使用支付宝进行注册，无需审核时间</p>
-                            <p>3. 前往<a href="https://anon.steem.network">anon.steem.network</a>使用加密货币进行付费注册，无需审核时间</p>
+                            <p>很抱歉，CNsteem.com暂不提供注册</p>
+                            <p>可前往<a href="https://cnsteem.io">cnsteem.io</a>使用进行注册，无需审核时间</p>
                         </div>
                     </div>
                 </div>
