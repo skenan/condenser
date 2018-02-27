@@ -193,7 +193,7 @@ export default class SlateEditor extends React.Component {
         } else if (state.isExpanded) {
             const href = window.prompt(
                 'Enter the URL of the link:',
-                'http://steemit.com'
+                'http://cnsteem.com'
             );
             if (href) {
                 state = state

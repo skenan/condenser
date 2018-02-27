@@ -3,14 +3,14 @@ import { objAccessor } from 'app/utils/Accessors';
 import normalizeProfile from 'app/utils/NormalizeProfile';
 
 const site_desc =
-    'Steemit is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system (Steem) for digital rewards.';
+    'CNsteem是Steemit的中文版，在这里你可以通过发表和审核文章可以赚取Steem加密货币。';
 
 function addSiteMeta(metas) {
-    metas.push({ title: 'Steemit' });
+    metas.push({ title: 'CNsteem' });
     metas.push({ name: 'description', content: site_desc });
     metas.push({ property: 'og:type', content: 'website' });
-    metas.push({ property: 'og:site_name', content: 'Steemit' });
-    metas.push({ property: 'og:title', content: 'Steemit' });
+    metas.push({ property: 'og:site_name', content: 'CNsteem' });
+    metas.push({ property: 'og:title', content: 'CNsteem' });
     metas.push({ property: 'og:description', content: site_desc });
     metas.push({
         property: 'og:image',
@@ -38,8 +38,8 @@ export default function extractMeta(chain_data, rp) {
         if (content && content.id !== '0.0.0') {
             // API currently returns 'false' data with id 0.0.0 for posts that do not exist
             const d = extractContent(objAccessor, content, false);
-            const url = 'https://steemit.com' + d.link;
-            const title = d.title + ' — Steemit';
+            const url = 'https://cnsteem.com' + d.link;
+            const title = d.title + ' — CNsteem';
             const desc = d.desc + ' by ' + d.author;
             const image = d.image_link || profile.profile_image;
             const { category, created } = d;
@@ -58,7 +58,7 @@ export default function extractMeta(chain_data, rp) {
                 content: image || 'https://steemit.com/images/steemit.png',
             });
             metas.push({ name: 'og:description', content: desc });
-            metas.push({ name: 'og:site_name', content: 'Steemit' });
+            metas.push({ name: 'og:site_name', content: 'CNsteem' });
             metas.push({ name: 'fb:app_id', content: $STM_Config.fb_app });
             metas.push({ name: 'article:tag', content: category });
             metas.push({
@@ -89,7 +89,7 @@ export default function extractMeta(chain_data, rp) {
         if (name == null) name = account.name;
         if (about == null)
             about =
-                'Join thousands on steemit who share, post and earn rewards.';
+                '加入Steem发表文章赚取加密货币.';
         if (profile_image == null)
             profile_image = 'https://steemit.com/images/steemit-twshare-2.png';
         // Set profile tags

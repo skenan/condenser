@@ -305,7 +305,7 @@ class CommentImpl extends React.Component {
         const showReplyOption = comment.depth < 255;
         const archived = comment.cashout_time === '1969-12-31T23:59:59'; // TODO: audit after HF19. #1259
         const readonly = archived || $STM_Config.read_only_mode;
-
+        comment.body = comment.body.replace(/https:\/\/steemit.com/g, 'https://cnsteem.com');
         let body = null;
         let controls = null;
 
