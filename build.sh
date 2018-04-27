@@ -1,3 +1,5 @@
+mkdir tmp
+rm -rf node_modules
 nvm install v8.7
 npm install -g yarn
 yarn global add babel-cli

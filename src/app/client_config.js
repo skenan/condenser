@@ -7,8 +7,8 @@ export const APP_NAME_UPPERCASE = 'CNSTEEM';
 export const APP_ICON = 'cnsteem';
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
-export const APP_URL = 'https://cnsteem.com';
-export const APP_DOMAIN = 'cnsteem.com';
+export const APP_URL = 'https://cnsteem.org';
+export const APP_DOMAIN = 'cnsteem.org';
 export const LIQUID_TOKEN = 'Steem';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
 export const LIQUID_TOKEN_UPPERCASE = 'STEEM';
@@ -43,7 +43,8 @@ export const SHARE_IMAGE =
     'https://' + APP_DOMAIN + '/images/steemit-share.png';
 export const TWITTER_SHARE_IMAGE =
     'https://' + APP_DOMAIN + '/images/steemit-twshare.png';
-export const SITE_DESCRIPTION = 'CNsteem是Steemit的中文版，在这里你可以通过发表和给文章点赞来赚取Steem加密货币。';
+export const SITE_DESCRIPTION =
+    'CNsteem是Steemit的中文版，在这里你可以通过发表和给文章点赞来赚取Steem加密货币。';
 
 // various
 export const SUPPORT_EMAIL = 'cnsteem@gmail.com';

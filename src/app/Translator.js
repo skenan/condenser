@@ -49,7 +49,7 @@ if (process.env.NODE_ENV === 'production') {
 class Translator extends React.Component {
     render() {
         const language = this.props.locale;
-        tt.setLocale(language);
+        tt.setLocale('zh');
         return (
             <IntlProvider
                 // to ensure dynamic language change, "key" property with same "locale" info must be added

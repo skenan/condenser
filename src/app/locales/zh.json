@@ -567,7 +567,9 @@
             "如果你最近关注了新的用户，更新内容将会显示在你的个性化主页",
         "empty_feed_3": "浏览流行文章",
         "empty_feed_4": "阅读快速入门指南",
-        "empty_feed_5": "浏览常见问题解答"
+        "empty_feed_5": "浏览常见问题解答",
+        "my_feed": "动态",
+        "accountnames_feed": "%(account_name)s的动态"
     },
     "transferhistoryrow_jsx": {
         "to_savings": "到储蓄账户",

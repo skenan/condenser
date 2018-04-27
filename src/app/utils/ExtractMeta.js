@@ -38,7 +38,7 @@ export default function extractMeta(chain_data, rp) {
         if (content && content.id !== '0.0.0') {
             // API currently returns 'false' data with id 0.0.0 for posts that do not exist
             const d = extractContent(objAccessor, content, false);
-            const url = 'https://cnsteem.com' + d.link;
+            const url = 'https://cnsteem.org' + d.link;
             const title = d.title + ' — CNsteem';
             const desc = d.desc + ' by ' + d.author;
             const image = d.image_link || profile.profile_image;
@@ -87,9 +87,7 @@ export default function extractMeta(chain_data, rp) {
         const account = chain_data.accounts[rp.accountname];
         let { name, about, profile_image } = normalizeProfile(account);
         if (name == null) name = account.name;
-        if (about == null)
-            about =
-                '加入Steem发表文章赚取加密货币.';
+        if (about == null) about = '加入Steem发表文章赚取加密货币.';
         if (profile_image == null)
             profile_image = 'https://steemit.com/images/steemit-twshare-2.png';
         // Set profile tags
